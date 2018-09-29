@@ -5,6 +5,9 @@ import org.activiti.spring.SpringProcessEngineConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -40,12 +43,12 @@ public class ActivitiConfig {
     @Bean
     public ProcessEngine processEngine() throws IOException {
         SpringProcessEngineConfiguration configuration = new SpringProcessEngineConfiguration();
-//        Resource[] resources = (Resource[]) new PathMatchingResourcePatternResolver().getResources(ResourceLoader.CLASSPATH_URL_PREFIX + "processes/*.bpmn");
+        Resource[] resources = (Resource[]) new PathMatchingResourcePatternResolver().getResources(ResourceLoader.CLASSPATH_URL_PREFIX + "processes/*.bpmn");
         configuration.setDataSource(dataSource);
         configuration.setTransactionManager(platformTransactionManager);
         configuration.setDatabaseType("mysql");
         configuration.setDatabaseSchemaUpdate("true");
-//        configuration.setDeploymentResources(resources);
+        configuration.setDeploymentResources(resources);
         configuration.setDbIdentityUsed(false);
         return configuration.buildProcessEngine();
 
