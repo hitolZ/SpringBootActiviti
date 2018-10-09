@@ -14,7 +14,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <!--<version>2.0.5.RELEASE</version>-->
+        <version>1.5.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -42,30 +43,19 @@
         </dependency>
 
 
-        <!--<dependency>-->
-            <!--<groupId>org.activiti</groupId>-->
-            <!--<artifactId>activiti-modeler</artifactId>-->
-            <!--<version>${activiti.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.activiti</groupId>-->
-            <!--<artifactId>activiti-diagram-rest</artifactId>-->
-            <!--<version>${activiti.version}</version>-->
-        <!--</dependency>-->
-
-
-        <!--<dependency>-->
-            <!--<groupId>org.activiti</groupId>-->
-            <!--<artifactId>activiti-engine</artifactId>-->
-            <!--<version>${activiti.version}</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.activiti</groupId>
-            <artifactId>activiti-spring</artifactId>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
             <version>${activiti.version}</version>
         </dependency>
+
+
+        <!--&lt;!&ndash;使用2.0版本的springboot  集成activiti&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.activiti</groupId>-->
+            <!--<artifactId>activiti-spring</artifactId>-->
+            <!--<version>${activiti.version}</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>
